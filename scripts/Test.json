@@ -1,0 +1,89 @@
+{
+  "courseId": "math-grade3-operations",
+  "courseTitle": "Math Operations",
+  "description": "Description for Bill and Budget",
+  "version": "1.0.0",
+  "config": {
+    "displaySettings": {
+      "showLessonHeader": true,
+      "showTopNav": true,
+      "showBottomNav": false,
+      "showSidebar": true,
+      "showBackButton": true,
+      "showMetadata": false,
+      "showIcon": true,
+      "showActions": false,
+      "showSidebarFooter": false,
+      "showMenu": false
+    },
+    "layoutSettings": {
+      "layout": "compact-tabs",
+      "pagesLayout": "grid-system",
+      "cardStyle": "default",
+      "transitionType": "slide",
+      "lessonHeaderType": "default"
+    },
+    "themeSettings": {
+      "theme": "kid",
+      "accentColor": "blue",
+      "lessonNavStyle": "glass",
+      "lessonPageStyle": "kids-timeline",
+      "pageNavStyle": "modern",
+      "bottomNavStyle": "subtle",
+      "sideBarStyle": "floating"
+    },
+    "progressSettings": {
+      "showProgress": true,
+      "progressStyle": "bar",
+      "progressPosition": "top",
+      "progressTheme": "green"
+    },
+    "teacherTrackingSettings": {
+      "enableTracking": true,
+      "trackableEvents": {
+        "pageViews": true,
+        "timeSpent": true,
+        "completionStatus": true,
+        "readingSpeed": true,
+        "audioPlayed": true,
+        "vocabularyClicks": true,
+        "comprehensionChecks": true,
+        "attentionLapses": true
+      },
+      "trackingMetrics": {
+        "totalTimeSpent": true,
+        "averageTimePerPage": true,
+        "completionPercentage": true,
+        "engagementScore": true,
+        "readingPace": true,
+        "vocabularyInteractions": true
+      },
+      "reportingOptions": {
+        "generateIndividualReport": true,
+        "generateClassReport": true,
+        "highlightStrugglingReaders": true,
+        "exportFormat": ["pdf", "csv"],
+        "shareWithParents": false
+      },
+      "interventionPoints": {
+        "slowProgress": true,
+        "repeatedPageVisits": true,
+        "skippedContent": true,
+        "incorrectComprehensionChecks": true
+      },
+      "triggers": {
+        "onScreenComplete": "advance",
+        "onInteraction": "unlock",
+        "onError": "retry",
+        "onTimeout": "hint",
+        "onMaxRetriesReached": "showSolution"
+      },
+      "shortcuts": {
+        "nextScreen": "ArrowRight",
+        "previousScreen": "ArrowLeft",
+        "toggleSidebar": "s",
+        "toggleProgress": "p"
+      }
+    }
+  }
+}

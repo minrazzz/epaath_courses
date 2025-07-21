@@ -1,0 +1,146 @@
+{
+  "id": "introduction-to-placeholder-xxxxxx",
+  "title": "Bill and Budget",
+  "description": "Description for Bill and Budget",
+  "courseMetadata": {
+    "totalDuration": "15 minutes",
+    "wordCount": 850,
+    "readingLevel": "Beginner",
+    "grade": "K-2",
+    "subject": "Reading",
+    "contentType": "story",
+    "vocabularyWords": ["budget", "save", "money", "count", "spend"],
+    "learningObjectives": [
+      "Practice reading simple words",
+      "Identify letter sounds",
+      "Build reading confidence"
+    ],
+    "language": "en"
+  },
+  "lessons": [
+    {
+      "id": "introduction-to-placeholder-xxxxxx",
+      "title": "Bill and Budget",
+      "description": "Description for Bill and Budget",
+      "config": {
+        "screenViewType": "auto",
+        "displaySettings": {
+          "showLessonHeader": true,
+          "showTopNav": true,
+          "showBottomNav": false,
+          "showSidebar": true,
+          "showBackButton": true,
+          "showMetadata": false,
+          "showIcon": true,
+          "showActions": false,
+          "showSidebarFooter": false,
+          "showMenu": false
+        },
+        "layoutSettings": {
+          "layout": "compact-tabs",
+          "pagesLayout": "grid-system",
+          "cardStyle": "default",
+          "transitionType": "slide",
+          "lessonHeaderType": "default"
+        },
+        "themeSettings": {
+          "theme": "kid",
+          "accentColor": "blue",
+          "lessonNavStyle": "glass",
+          "lessonPageStyle": "kids-timeline",
+          "pageNavStyle": "modern",
+          "bottomNavStyle": "subtle",
+          "sideBarStyle": "floating"
+        },
+        "progressSettings": {
+          "showProgress": true,
+          "progressStyle": "bar",
+          "progressPosition": "top",
+          "progressTheme": "green"
+        },
+        "interactionSettings": {
+          "requireInteraction": true,
+          "interactionTimeout": 30000,
+          "allowSkip": false,
+          "requireConfirmation": false,
+          "autoAdvanceDelay": 0,
+          "allowRetry": true,
+          "maxRetries": 3
+        },
+        "accessibilitySettings": {
+          "highContrast": true,
+          "largeText": true,
+          "reducedMotion": false,
+          "screenReaderOptimized": true
+        },
+        "navigationControlSetting": {
+          "actions": [
+            {
+              "label": "Download Materials",
+              "onClick": "handleDownload"
+            },
+            {
+              "label": "Share",
+              "onClick": "handleShare"
+            }
+          ]
+        },
+        "triggers": {
+          "onScreenComplete": "advance",
+          "onInteraction": "unlock",
+          "onError": "retry",
+          "onTimeout": "hint",
+          "onMaxRetriesReached": "showSolution"
+        },
+        "shortcuts": {
+          "nextScreen": "ArrowRight",
+          "previousScreen": "ArrowLeft",
+          "toggleSidebar": "s",
+          "toggleProgress": "p"
+        }
+      },
+      "lessonMetadata": {
+        "totalDuration": "15 minutes",
+        "wordCount": 850,
+        "readingLevel": "Beginner",
+        "grade": "K-2",
+        "subject": "Reading",
+        "contentType": "story",
+        "vocabularyWords": ["budget", "save", "money", "count", "spend"],
+        "learningObjectives": [
+          "Practice reading simple words",
+          "Identify letter sounds",
+          "Build reading confidence"
+        ],
+        "language": "en"
+      },
+      "pages": [
+        {
+          "id": "page-1",
+          "category": "learn",
+          "templateID": "DefaultTemplate",
+          "title": "Introduction to the Lesson",
+          "description": "This page introduces the lesson.",
+          "theme": "marigoldWhisper",
+          "feedbackSettings": {
+            "show": false,
+            "type": "sideSheet",
+            "text": "Oops!! That doesn't seem to be right answers."
+          },
+          "screens": [
+            {
+              "id": "screen-1",
+              "componentID": "TestScreens",
+              "componentCategoryPath": "DefaultTemplate/Components",
+              "props": {
+                "title": "This is a Title",
+                "text": "Here is some introductory text to get you started.",
+                "imageSrc": "/assets/images/sample-image.png"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
