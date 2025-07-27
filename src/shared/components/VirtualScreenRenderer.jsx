@@ -5,7 +5,6 @@ import { preloadManager } from "@/core/performance/preloadManager";
 const VirtualScreenRenderer = ({
   screens,
   currentScreenIndex,
-  renderComponent,
   onScreenComplete,
 }) => {
   const [loadedComponents, setLoadedComponents] = useState({});
@@ -23,18 +22,22 @@ const VirtualScreenRenderer = ({
 
       for (let i = start; i < end; i++) {
         const screen = screens[i];
-        if (!screen?.componentPath) continue;
+
+        if (!screen?.componentID) continue;
 
         const priority = i === currentScreenIndex ? "high" : "normal";
+        const screenPath = `${screen?.componentCategoryPath}/${screen?.componentID}`;
 
         const loadPromise = preloadManager
-          .preloadComponent(screen.componentPath, priority)
+          .preloadComponent(screenPath, priority)
           .then((module) => {
+            console.log("successfully preloaded", screenPath);
             if (currentLoadRef.current === loadId) {
               componentMap[screen.componentID] = module.default || module;
             }
           })
           .catch((error) => {
+            console.log("successfully preloaded", screenPath);
             if (currentLoadRef.current === loadId) {
               console.warn(
                 `Failed to preload component: ${screen.componentPath}`,
@@ -66,11 +69,11 @@ const VirtualScreenRenderer = ({
 
     preloadScreens();
 
-    return () => {
-      if (currentLoadRef.current === loadId) {
-        currentLoadRef.current = null;
-      }
-    };
+    // return () => {
+    //   if (currentLoadRef.current === loadId) {
+    //     currentLoadRef.current = null;
+    //   }
+    // };
   }, [currentScreenIndex, screens, start, end]);
 
   const renderScreens = useCallback(() => {

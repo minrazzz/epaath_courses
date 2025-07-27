@@ -1,3 +1,5 @@
+import { componentsRegistry } from "../registries/templatesRegistry";
+
 class PreloadManager {
   constructor() {
     this.cache = new Map();
@@ -25,6 +27,7 @@ class PreloadManager {
         path: componentPath,
         promise: loadPromise,
       });
+
       this.processQueue();
       return loadPromise;
     }
@@ -32,13 +35,18 @@ class PreloadManager {
 
   async _loadComponent(componentPath) {
     try {
-      const module = await import(/* @vite-ignore */ componentPath);
+      // const module = await import(/* @vite-ignore */ componentPath);
+      const module = await componentsRegistry?.[componentPath]();
+
       this.cache.set(componentPath, module);
       this.loadingPromises.delete(componentPath);
       return module;
     } catch (error) {
+      console.warn(
+        `[_loadComponent] Failed to preload component: ${componentPath}`,
+        error
+      );
       this.loadingPromises.delete(componentPath);
-      console.warn(`Failed to preload component: ${componentPath}`, error);
       throw error;
     }
   }
@@ -47,7 +55,9 @@ class PreloadManager {
     if (this.isPreloading || this.preloadQueue.length === 0) {
       return;
     }
+
     this.isPreloading = true;
+    console.log(`[processQueue] Processing queue...`);
 
     const scheduleWork = (callback) => {
       if (typeof requestIdleCallback !== "undefined") {
@@ -60,13 +70,16 @@ class PreloadManager {
     scheduleWork(async () => {
       try {
         const batch = this.preloadQueue.splice(0, 3);
+
         await Promise.allSettled(batch.map((item) => item?.promise));
       } catch (error) {
-        console.warn("Error processing preload queue:", error);
+        console.warn("[processQueue] Error processing preload queue:", error);
       } finally {
         this.isPreloading = false;
         if (this.preloadQueue.length > 0) {
           this.processQueue();
+        } else {
+          console.log("[processQueue] Queue is empty. Done.");
         }
       }
     });
@@ -77,7 +90,9 @@ class PreloadManager {
   }
 
   isLoading(componentPath) {
-    return this.loadingPromises.has(componentPath);
+    const loading = this.loadingPromises.has(componentPath);
+
+    return loading;
   }
 
   clearCache(componentPath) {

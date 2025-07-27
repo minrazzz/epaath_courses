@@ -1,7 +1,12 @@
 import React from "react";
 
-const DefaultTemplate = () => {
-  return <div></div>;
+const DefaultTemplate = ({ children }) => {
+  return (
+    <div>
+      Default template
+      {children}
+    </div>
+  );
 };
 
 export default DefaultTemplate;

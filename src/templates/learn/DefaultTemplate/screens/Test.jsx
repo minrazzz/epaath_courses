@@ -1,5 +1,6 @@
-const Test = () => {
-  return <div>This is a test Screen</div>;
+const Test = ({ title, description }) => {
+  console.log(title);
+  return <div>{title} default</div>;
 };
 
 export default Test;

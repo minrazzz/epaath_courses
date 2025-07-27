@@ -1,11 +1,15 @@
-import { useCallback } from "react";
+import { templatesRegistry } from "../core/registries/templatesRegistry";
+import { useCallback, useEffect, useState } from "react";
 
 const usePage = ({
   courseId = "introduction-to-placeholder-xxxxxx",
   lessonId = "introduction-to-placeholder-xxxxxx",
   pageId = "page-1",
 }) => {
-  const loadPage = useCallback(async () => {
+  const [TemplateComponent, setTemplateComponent] = useState(null);
+  const [page, setPage] = useState(null);
+
+  const _loadPage = useCallback(async () => {
     try {
       const course = (await import(`../courses/${courseId}/testjson.json`))
         .default;
@@ -26,17 +30,41 @@ const usePage = ({
     }
   }, [pageId, courseId, lessonId]);
 
-  const loadTemplate = useCallback(async () => {
+  const _loadTemplate = useCallback(async () => {
     try {
-      const page = await loadPage();
-      const templateComponentId = page?.templateId
-      const templateComponentPath = 
+      const page = await _loadPage();
+      if (!page) {
+        throw new Error(`Page with id ${pageId} not found`);
+      }
+      setPage(page);
+      const templateCategory = page?.category;
+      const templateId = page?.templateID;
+      const templateImportFunction =
+        templatesRegistry?.[`${templateCategory}/${templateId}`];
+      if (!templateImportFunction) {
+        throw new Error(
+          `Template with category ${templateCategory} and id ${templateId} not found`
+        );
+      }
+      const TemplateComponent = await templateImportFunction();
+      if (!TemplateComponent) {
+        throw new Error(`Template component for ${templateId} not found`);
+      }
+      setTemplateComponent(
+        () => TemplateComponent.default || TemplateComponent
+      );
     } catch (error) {
       console.log("error while loading template", error);
     }
-  }, []);
+  }, [_loadPage, pageId, courseId, lessonId]);
 
-  return {};
+  useEffect(() => {
+    _loadTemplate();
+  }, [_loadTemplate]);
+
+  return {
+    TemplateComponent,
+    page,
+  };
 };
-
 export default usePage;

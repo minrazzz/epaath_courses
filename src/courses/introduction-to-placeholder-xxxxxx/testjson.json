@@ -118,7 +118,7 @@
         {
           "id": "page-1",
           "category": "learn",
-          "templateID": "DefaultTemplate",
+          "templateID": "EarlyGradingTemplate",
           "title": "Introduction to the Lesson",
           "description": "This page introduces the lesson.",
           "theme": "marigoldWhisper",
@@ -130,8 +130,48 @@
           "screens": [
             {
               "id": "screen-1",
-              "componentID": "TestScreens",
-              "componentCategoryPath": "DefaultTemplate/Components",
+              "componentID": "Test",
+              "componentCategoryPath": "learn/DefaultTemplate",
+              "props": {
+                "title": "This is a Title",
+                "text": "Here is some introductory text to get you started.",
+                "imageSrc": "/assets/images/sample-image.png"
+              }
+            },
+            {
+              "id": "screen-2",
+              "componentID": "Test",
+              "componentCategoryPath": "learn/DefaultTemplate",
+              "props": {
+                "title": "This is a Title",
+                "text": "Here is some introductory text to get you started.",
+                "imageSrc": "/assets/images/sample-image.png"
+              }
+            },
+            {
+              "id": "screen-3",
+              "componentID": "Test",
+              "componentCategoryPath": "learn/DefaultTemplate",
+              "props": {
+                "title": "This is a Title",
+                "text": "Here is some introductory text to get you started.",
+                "imageSrc": "/assets/images/sample-image.png"
+              }
+            },
+            {
+              "id": "screen-4",
+              "componentID": "Test",
+              "componentCategoryPath": "learn/DefaultTemplate",
+              "props": {
+                "title": "This is a Title",
+                "text": "Here is some introductory text to get you started.",
+                "imageSrc": "/assets/images/sample-image.png"
+              }
+            },
+            {
+              "id": "screen-5",
+              "componentID": "Test",
+              "componentCategoryPath": "learn/DefaultTemplate",
               "props": {
                 "title": "This is a Title",
                 "text": "Here is some introductory text to get you started.",
