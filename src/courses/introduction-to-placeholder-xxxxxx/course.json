@@ -1,0 +1,359 @@
+{
+  "id": "math-problem-solving-101",
+  "title": "Step-by-Step Problem Solving",
+  "description": "Learn to solve math problems by breaking them down into steps",
+  "courseMetadata": {
+    "totalDuration": "25 minutes",
+    "problemCount": 5,
+    "difficultyLevel": "Beginner",
+    "grade": "3-4",
+    "subject": "Mathematics",
+    "contentType": "guided-practice",
+    "mathConcepts": [
+      "addition",
+      "subtraction",
+      "word problems",
+      "visual models"
+    ],
+    "learningObjectives": [
+      "Break down word problems into steps",
+      "Use visual models to solve problems",
+      "Explain mathematical thinking",
+      "Apply multiple strategies to solve problems"
+    ],
+    "language": "en"
+  },
+  "lessons": [
+    {
+      "id": "math-problem-solving-lesson",
+      "title": "Problem Solving Strategies",
+      "description": "Learn strategies for solving math word problems",
+      "config": {
+        "screenViewType": "auto",
+        "displaySettings": {
+          "showLessonHeader": true,
+          "showTopNav": true,
+          "showBottomNav": true,
+          "showSidebar": true,
+          "showBackButton": true,
+          "showMetadata": false,
+          "showMathToolbar": true,
+          "showCalculator": true,
+          "showDrawingTools": true
+        },
+        "layoutSettings": {
+          "layout": "math-workspace",
+          "pagesLayout": "sequential-steps",
+          "cardStyle": "worksheet",
+          "transitionType": "slide",
+          "lessonHeaderType": "progress-based"
+        },
+        "themeSettings": {
+          "theme": "math-focus",
+          "accentColor": "teal",
+          "lessonNavStyle": "numbered-steps",
+          "lessonPageStyle": "problem-steps",
+          "pageNavStyle": "stepper",
+          "bottomNavStyle": "hint-enabled",
+          "sideBarStyle": "tools-panel"
+        },
+        "mathSettings": {
+          "showNumberLine": true,
+          "showGrid": true,
+          "mathFont": "standard",
+          "allowMultipleApproaches": true,
+          "showWorkRequirement": "encouraged",
+          "notationStyle": "standard"
+        },
+        "progressSettings": {
+          "showProgress": true,
+          "progressStyle": "steps-completed",
+          "progressPosition": "top",
+          "progressTheme": "math-journey",
+          "showConceptMastery": true
+        },
+        "interactionSettings": {
+          "requireExplanation": true,
+          "allowPartialCredit": true,
+          "requireConfirmation": true,
+          "autoAdvanceDelay": 0,
+          "allowRetry": true,
+          "maxRetries": 2,
+          "provideFeedbackAt": "each-step"
+        },
+        "accessibilitySettings": {
+          "highContrast": false,
+          "largeText": false,
+          "reducedMotion": false,
+          "screenReaderOptimized": true,
+          "mathAccessibility": "enhanced"
+        },
+        "teacherTrackingSettings": {
+          "trackAttemptsPerStep": true,
+          "trackTimePerProblem": true,
+          "trackStrategyUsed": true,
+          "trackMisconceptions": true,
+          "trackHintUsage": true,
+          "flagCommonErrors": true,
+          "generateMasteryReport": true
+        },
+        "shortcuts": {
+          "nextStep": "ArrowRight",
+          "previousStep": "ArrowLeft",
+          "showHint": "h",
+          "toggleCalculator": "c",
+          "toggleNumberLine": "n"
+        }
+      },
+      "lessonMetadata": {
+        "mathStandards": ["CCSS.Math.3.OA.8", "CCSS.Math.3.NBT.2"],
+        "prerequisiteSkills": [
+          "Basic addition and subtraction",
+          "Understanding of math vocabulary"
+        ],
+        "commonMisconceptions": [
+          "Choosing operation based on key words only",
+          "Difficulty identifying relevant information"
+        ]
+      },
+      "pages": [
+        {
+          "id": "page-1",
+          "category": "math",
+          "templateID": "MathProblemSolvingTemplate",
+          "title": "Solving Word Problems",
+          "description": "Learn to solve word problems using a step-by-step approach",
+          "theme": "mathFocus",
+          "screenDisplayMode": "oneAtATime",
+          "mathTools": ["numberLine", "counters", "calculator"],
+          "feedbackSettings": {
+            "show": true,
+            "type": "inline",
+            "errorFeedback": "Let's look at that step again.",
+            "conceptualHints": true
+          },
+          "screens": [
+            {
+              "id": "screen-1",
+              "componentID": "ProblemIntroduction",
+              "componentCategoryPath": "math/MathProblemSolving",
+              "props": {
+                "title": "At the Farmers Market",
+                "problemStatement": "Bill went to the farmers market with $20. He spent $7 on apples and $5 on vegetables. How much money does Bill have left?",
+                "problemImage": "/assets/images/farmers-market.jpg",
+                "mathContext": "This problem involves subtraction of money amounts from a total.",
+                "thinkingPrompt": "What information do you need to solve this problem?",
+                "importantInformation": [
+                  "Bill started with $20",
+                  "He spent $7 on apples",
+                  "He spent $5 on vegetables"
+                ]
+              }
+            },
+            {
+              "id": "screen-2",
+              "componentID": "UnderstandingTheStrategy",
+              "componentCategoryPath": "math/MathProblemSolving",
+              "props": {
+                "title": "Choose a Strategy",
+                "strategyOptions": [
+                  {
+                    "id": "strategy-1",
+                    "name": "Draw a Picture",
+                    "description": "Draw money to represent the problem",
+                    "iconSrc": "/assets/icons/drawing-strategy.svg"
+                  },
+                  {
+                    "id": "strategy-2",
+                    "name": "Make an Equation",
+                    "description": "Write an equation to represent the problem",
+                    "iconSrc": "/assets/icons/equation-strategy.svg"
+                  },
+                  {
+                    "id": "strategy-3",
+                    "name": "Step by Step",
+                    "description": "Break the problem into smaller steps",
+                    "iconSrc": "/assets/icons/steps-strategy.svg"
+                  }
+                ],
+                "promptQuestion": "Which strategy would you like to use to solve this problem?",
+                "hintText": "Think about which method helps you visualize money being spent."
+              }
+            },
+            {
+              "id": "screen-3",
+              "componentID": "MathWorkspace",
+              "componentCategoryPath": "math/MathProblemSolving",
+              "props": {
+                "title": "Solve Step by Step",
+                "initialEquation": "$20 - ? = ?",
+                "steps": [
+                  {
+                    "id": "step-1",
+                    "instruction": "First, find the total amount Bill spent.",
+                    "questionType": "fill-in",
+                    "correctAnswer": "$12",
+                    "explanation": "To find the total spent, add the amount spent on apples ($7) and vegetables ($5).",
+                    "hintText": "Add the two amounts Bill spent: $7 + $5 = ?"
+                  },
+                  {
+                    "id": "step-2",
+                    "instruction": "Now, subtract the total amount spent from Bill's starting amount.",
+                    "questionType": "fill-in",
+                    "correctAnswer": "$8",
+                    "explanation": "Subtract the total spent from what Bill started with: $20 - $12 = $8",
+                    "hintText": "Take the starting amount and subtract what was spent: $20 - $12 = ?"
+                  }
+                ],
+                "workspaceTools": {
+                  "showNumberLine": true,
+                  "showDrawingTools": true,
+                  "showVirtualManipulatives": true
+                },
+                "visualAids": {
+                  "moneyVisuals": true,
+                  "barModel": false,
+                  "numberBonds": false
+                }
+              }
+            },
+            {
+              "id": "screen-4",
+              "componentID": "VisualModelSolution",
+              "componentCategoryPath": "math/MathProblemSolving",
+              "props": {
+                "title": "Visual Solution",
+                "modelType": "bar-model",
+                "steps": [
+                  {
+                    "id": "visual-step-1",
+                    "instruction": "We start with $20",
+                    "visualState": {
+                      "totalBar": 20,
+                      "segments": [
+                        { "value": 20, "label": "$20", "color": "blue" }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "visual-step-2",
+                    "instruction": "Bill spends $7 on apples",
+                    "visualState": {
+                      "totalBar": 20,
+                      "segments": [
+                        { "value": 7, "label": "Apples: $7", "color": "red" },
+                        {
+                          "value": 13,
+                          "label": "Remaining: $13",
+                          "color": "blue"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "visual-step-3",
+                    "instruction": "Then he spends $5 more on vegetables",
+                    "visualState": {
+                      "totalBar": 20,
+                      "segments": [
+                        { "value": 7, "label": "Apples: $7", "color": "red" },
+                        {
+                          "value": 5,
+                          "label": "Vegetables: $5",
+                          "color": "green"
+                        },
+                        {
+                          "value": 8,
+                          "label": "Remaining: $8",
+                          "color": "blue"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "finalExplanation": "Bill spent a total of $12 ($7 + $5), leaving him with $8 ($20 - $12).",
+                "interactionPrompt": "Drag the bars to see how the money changes as Bill spends it."
+              }
+            },
+            {
+              "id": "screen-5",
+              "componentID": "ReflectionAndExtension",
+              "componentCategoryPath": "math/MathProblemSolving",
+              "props": {
+                "title": "Think About It",
+                "reflectionQuestions": [
+                  {
+                    "id": "reflect-1",
+                    "question": "What operation did you use to find how much Bill spent in total?",
+                    "questionType": "multiple-choice",
+                    "options": [
+                      {
+                        "id": "r1-opt1",
+                        "text": "Addition",
+                        "isCorrect": true
+                      },
+                      {
+                        "id": "r1-opt2",
+                        "text": "Subtraction",
+                        "isCorrect": false
+                      },
+                      {
+                        "id": "r1-opt3",
+                        "text": "Multiplication",
+                        "isCorrect": false
+                      },
+                      {
+                        "id": "r1-opt4",
+                        "text": "Division",
+                        "isCorrect": false
+                      }
+                    ]
+                  },
+                  {
+                    "id": "reflect-2",
+                    "question": "What operation did you use to find how much money Bill had left?",
+                    "questionType": "multiple-choice",
+                    "options": [
+                      {
+                        "id": "r2-opt1",
+                        "text": "Addition",
+                        "isCorrect": false
+                      },
+                      {
+                        "id": "r2-opt2",
+                        "text": "Subtraction",
+                        "isCorrect": true
+                      },
+                      {
+                        "id": "r2-opt3",
+                        "text": "Multiplication",
+                        "isCorrect": false
+                      },
+                      {
+                        "id": "r2-opt4",
+                        "text": "Division",
+                        "isCorrect": false
+                      }
+                    ]
+                  },
+                  {
+                    "id": "reflect-3",
+                    "question": "Explain your strategy for solving this problem.",
+                    "questionType": "open-ended",
+                    "responsePrompt": "I solved this problem by...",
+                    "sampleResponse": "I solved this problem by first finding the total amount Bill spent by adding $7 and $5 to get $12. Then I subtracted that total from Bill's starting amount of $20 to get $8."
+                  }
+                ],
+                "extensionProblem": {
+                  "text": "If Bill went back to the market the next day with $25 and spent the same amounts on apples and vegetables, plus $6 on bread, how much money would he have left?",
+                  "correctAnswer": "$7",
+                  "hintText": "Add all three amounts Bill spent, then subtract from $25."
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

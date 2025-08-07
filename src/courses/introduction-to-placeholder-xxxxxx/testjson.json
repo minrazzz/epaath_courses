@@ -130,8 +130,8 @@
           "screens": [
             {
               "id": "screen-1",
-              "componentID": "MathTestScreen",
-              "componentCategoryPath": "math/MathDefaultTemplate",
+              "componentID": "Test",
+              "componentCategoryPath": "learn/DefaultTemplate",
               "props": {
                 "title": "This is a Title",
                 "text": "Here is some introductory text to get you started.",
@@ -141,7 +141,7 @@
             {
               "id": "screen-2",
               "componentID": "Test",
-              "componentCategoryPath": "math/MathDefaultTemplate",
+              "componentCategoryPath": "learn/DefaultTemplate",
               "props": {
                 "title": "This is a Title for math",
                 "text": "Here is some introductory text to get you started.",

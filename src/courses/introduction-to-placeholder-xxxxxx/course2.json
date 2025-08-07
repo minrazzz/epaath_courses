@@ -1,0 +1,20 @@
+{
+  "id": "introduction-to-placeholder-xxxxxx",
+  "title": "Bill and Budget",
+  "description": "Description for Bill and Budget",
+  "courseMetadata": {
+    "totalDuration": "15 minutes",
+    "wordCount": 850,
+    "readingLevel": "Beginner",
+    "grade": "K-2",
+    "subject": "Reading",
+    "contentType": "story",
+    "vocabularyWords": ["budget", "save", "money", "count", "spend"],
+    "learningObjectives": [
+      "Practice reading simple words",
+      "Identify letter sounds",
+      "Build reading confidence"
+    ],
+    "language": "en"
+  }
+}

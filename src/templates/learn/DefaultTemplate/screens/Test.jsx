@@ -1,6 +1,5 @@
 const Test = ({ title, description }) => {
-  console.log(title);
-  return <div>{title} default templatesdfjskdfjsd</div>;
+  return <div>{title}d</div>;
 };
 
 export default Test;

@@ -68,12 +68,6 @@ const VirtualScreenRenderer = ({
     };
 
     preloadScreens();
-
-    // return () => {
-    //   if (currentLoadRef.current === loadId) {
-    //     currentLoadRef.current = null;
-    //   }
-    // };
   }, [currentScreenIndex, screens, start, end]);
 
   const renderScreens = useCallback(() => {

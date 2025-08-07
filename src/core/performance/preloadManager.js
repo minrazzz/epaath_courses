@@ -34,6 +34,7 @@ class PreloadManager {
   }
 
   async _loadComponent(componentPath) {
+    console.log(`[_loadComponent] Preloading component: ${componentPath}`);
     try {
       // const module = await import(/* @vite-ignore */ componentPath);
       const module = await componentsRegistry?.[componentPath]();
